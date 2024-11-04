@@ -13,7 +13,7 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "inerpulse LLP",
-  description: "Empower Your Business ERP",
+  description: "Empower Your Business with ERP",
   // other metadata
 };
 
