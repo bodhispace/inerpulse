@@ -23,19 +23,12 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "https://inerpulse.com/og-image.jpg", // Use an appropriate OG image URL
+        url: "https://www.inerpulse.com/images/logo/logo.png", // Use an appropriate OG image URL
         width: 1200,
         height: 630,
         alt: "Inerpulse LLP - ERP Solutions",
       },
     ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Inerpulse LLP - ERP Solutions for SMBs",
-    description: "Efficient, scalable ERP systems designed for small and medium-sized businesses. Partner with Inerpulse LLP to simplify and grow your operations.",
-    site: "@inerpulse",
-    image: "https://inerpulse.com/twitter-image.jpg", // Use a Twitter-specific image if needed
   },
 };
 
