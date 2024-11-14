@@ -5,10 +5,9 @@ import Breadcrumb from "@/components/Common/Breadcrumb";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "About Inerpulse LLP | Simplify, Grow, and Succeed",
-  description: `Discover how Inerpulse LLP’s Odoo ERP solutions empower businesses to streamline operations, boost productivity, and unlock their full potential. Learn more about our mission, values, and commitment to customer success.`,
+  title: "About Page | inerpulse",
+  description: `This is About Page for Startup Nextjs Template`,
 };
-
 
 const AboutPage = () => {
   const description = `
