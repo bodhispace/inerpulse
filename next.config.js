@@ -1,15 +1,18 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
+module.exports = {
+  reactStrictMode: true,
   images: {
-    domains: ["localhost"],
     remotePatterns: [
       {
         protocol: "https",
         hostname: "cdn.sanity.io",
-        port: "",
+      },
+      {
+        protocol: "http",
+        hostname: "localhost",
       },
     ],
   },
+  // Explicitly specify the app directory (although it should be automatic)
+  output: 'standalone',
 };
-
-module.exports = nextConfig;
