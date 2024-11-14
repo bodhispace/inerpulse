@@ -13,6 +13,11 @@ const Header = () => {
     setNavbarOpen(!navbarOpen);
   };
 
+  // Close the menu
+  const closeMenu = () => {
+    setNavbarOpen(false);
+  };
+
   // Sticky Navbar
   const [sticky, setSticky] = useState(false);
   const handleStickyNavbar = () => {
@@ -24,9 +29,10 @@ const Header = () => {
   };
   useEffect(() => {
     window.addEventListener("scroll", handleStickyNavbar);
+    return () => window.removeEventListener("scroll", handleStickyNavbar);
   });
 
-  // submenu handler
+  // Submenu handler
   const [openIndex, setOpenIndex] = useState(-1);
   const handleSubmenu = (index) => {
     if (openIndex === index) {
@@ -55,6 +61,7 @@ const Header = () => {
                 className={`header-logo block w-full ${
                   sticky ? "py-5 lg:py-2" : "py-8"
                 } `}
+                onClick={closeMenu} // Close menu on logo click
               >
                 <Image
                   src="/images/logo/logo.png"
@@ -115,6 +122,7 @@ const Header = () => {
                                 ? "text-primary dark:text-white"
                                 : "text-dark hover:text-primary dark:text-white/70 dark:hover:text-white"
                             }`}
+                            onClick={closeMenu} // Close menu on link click
                           >
                             {menuItem.title}
                           </Link>
@@ -146,6 +154,7 @@ const Header = () => {
                                   href={submenuItem.path}
                                   key={index}
                                   className="block rounded py-2.5 text-sm text-dark hover:text-primary dark:text-white/70 dark:hover:text-white lg:px-3"
+                                  onClick={closeMenu} // Close menu on submenu item click
                                 >
                                   {submenuItem.title}
                                 </Link>
