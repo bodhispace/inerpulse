@@ -8,8 +8,8 @@ const Features = () => {
       <section id="features" className="py-16 md:py-20 lg:py-28">
         <div className="container">
           <SectionTitle
-            title="Why Choose Inerpulse?"
-            paragraph="At Inerpulse, we believe in making business management simple, effective, and tailored to your needs. Here’s how we help you succeed:"
+            title="Main Features"
+            paragraph="There are many variations of passages of Lorem Ipsum available but the majority have suffered alteration in some form."
             center
           />
 

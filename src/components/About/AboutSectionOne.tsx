@@ -24,8 +24,8 @@ const AboutSectionOne = () => {
           <div className="-mx-4 flex flex-wrap items-center">
             <div className="w-full px-4 lg:w-1/2">
               <SectionTitle
-                title="Empowering Businesses with Odoo ERP Solutions"
-                paragraph="At Inerpulse LLP, we provide tailored Odoo ERP solutions to streamline your operations, enhance productivity, and drive growth. Our solutions are designed to replace outdated systems, helping your business thrive."
+                title="Crafted for Startup, SaaS and Business Sites."
+                paragraph="The main ‘thrust’ is to focus on educating attendees on how to best protect highly vulnerable business applications with interactive panel discussions and roundtables."
                 mb="44px"
               />
 
@@ -35,15 +35,15 @@ const AboutSectionOne = () => {
               >
                 <div className="mx-[-12px] flex flex-wrap">
                   <div className="w-full px-3 sm:w-1/2 lg:w-full xl:w-1/2">
-                    <List text="Streamlined Operations" />
-                    <List text="Customizable Solutions" />
-                    <List text="Scalable for Growth" />
+                    <List text="Premium quality" />
+                    <List text="Tailwind CSS" />
+                    <List text="Use for lifetime" />
                   </div>
 
                   <div className="w-full px-3 sm:w-1/2 lg:w-full xl:w-1/2">
-                    <List text="Real-time Reporting" />
-                    <List text="User-friendly Interface" />
-                    <List text="Comprehensive Support" />
+                    <List text="Next.js" />
+                    <List text="Rich documentation" />
+                    <List text="Developer friendly" />
                   </div>
                 </div>
               </div>

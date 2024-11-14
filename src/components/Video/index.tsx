@@ -13,8 +13,8 @@ const Video = () => {
     <section className="relative z-10 py-16 md:py-20 lg:py-28">
       <div className="container">
         <SectionTitle
-          title="We're Here to Support Your Business"
-          paragraph="Simplify your business with Inerpulse's Odoo ERP solutions. From streamlining operations to boosting efficiency, we're ready to support your growth every step of the way."
+          title="We are ready to help"
+          paragraph="There are many variations of passages of Lorem Ipsum available but the majority have suffered alteration in some form."
           center
           mb="80px"
         />
@@ -54,7 +54,7 @@ const Video = () => {
         autoplay={true}
         start={true}
         isOpen={isOpen}
-        videoId="nbso3NVz3p8"
+        videoId="L61p2uyiMSo"
         onClose={() => setOpen(false)}
       />
 
