@@ -5,7 +5,7 @@ import Breadcrumb from "@/components/Common/Breadcrumb";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-About   title: "About Inerpulse LLP | Simplify, Grow, and Succeed",
+  title: "About Inerpulse LLP | Simplify, Grow, and Succeed",
   description: `Discover how Inerpulse LLP’s Odoo ERP solutions empower businesses to streamline operations, boost productivity, and unlock their full potential. Learn more about our mission, values, and commitment to customer success.`,
 };
 
