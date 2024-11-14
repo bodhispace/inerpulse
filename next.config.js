@@ -1,15 +1,16 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
+module.exports = {
+  reactStrictMode: true,
   images: {
-    domains: ["localhost"],
     remotePatterns: [
       {
         protocol: "https",
         hostname: "cdn.sanity.io",
-        port: "",
+      },
+      {
+        protocol: "http",
+        hostname: "localhost",
       },
     ],
   },
 };
-
-module.exports = nextConfig;
