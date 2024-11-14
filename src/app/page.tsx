@@ -12,26 +12,10 @@ import Video from "@/components/Video";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Inerpulse LLP - Empowering SMBs with Seamless ERP Solutions",
+   title: "Inerpulse LLP - Empowering SMBs with Seamless ERP Solutions",
   description: "Discover Odoo-powered ERP solutions tailored for small and medium businesses. Inerpulse LLP transforms operations with streamlined processes and enhanced efficiency.",
-  keywords: "Odoo ERP, ERP solutions for SMBs, Inerpulse LLP, business automation, digital transformation, scalable ERP, efficient business solutions",
-  author: "Inerpulse LLP",
-  openGraph: {
-    title: "Inerpulse LLP - Your Partner in Digital Transformation",
-    description: "Unlock growth with Inerpulse LLP's custom ERP solutions, designed to scale with your business needs.",
-    url: "https://inerpulse.com",
-    type: "website",
-    images: [
-      {
-        url: "https://www.inerpulse.com/images/logo/logo.png", // Use an appropriate OG image URL
-        width: 1200,
-        height: 630,
-        alt: "Inerpulse LLP - ERP Solutions",
-      },
-    ],
-  },
+  // other metadata
 };
-
 
 export default function Home() {
   return (
