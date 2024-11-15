@@ -45,7 +45,7 @@ const featuresData: Feature[] = [
   },
   {
     id: 7,
-    icon: <img src="/images/features/9.png"alt="Make Your Customers Happy" width="70" height="70" />,
+    icon: <img src="/images/features/7.png"alt="Make Your Customers Happy" width="70" height="70" />,
     title: "Make Your Customers Happy",
     paragraph:
       "Odoo helps you serve your customers better, whether it's through quick responses or smooth online shopping. Happy customers mean loyal customers.",
