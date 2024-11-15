@@ -3,7 +3,7 @@ import { Feature } from "@/types/feature";
 const featuresData: Feature[] = [
   {
     id: 1,
-    icon: <img src="/images/features/1.png" alt="Make Your Work Easier" width="40" height="40" />,
+    icon: <img src="/images/features/8.png" alt="Make Your Work Easier" width="60" height="80" style={{ border: 'none', background: 'transparent' }}/>,
     title: "Make Your Work Easier",
     paragraph:
       "Odoo helps you handle everything in one place, from managing sales to keeping track of money. This makes your daily tasks simpler and faster.",
@@ -45,7 +45,7 @@ const featuresData: Feature[] = [
   },
   {
     id: 7,
-    icon: <img src="/images/features/6.png"alt="Make Your Customers Happy" width="40" height="40" />,
+    icon: <img src="/images/features/9.png"alt="Make Your Customers Happy" width="70" height="70" />,
     title: "Make Your Customers Happy",
     paragraph:
       "Odoo helps you serve your customers better, whether it's through quick responses or smooth online shopping. Happy customers mean loyal customers.",
