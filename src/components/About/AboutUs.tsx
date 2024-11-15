@@ -79,7 +79,7 @@ const AboutUs: React.FC = () => {
             <div className="w-full md:w-1/3 px-4 mb-8">
               <div className="text-center">
                 <Image
-                  src="/images/about/Vijay.jpg"
+                  src="/images/about/Pathy.jpg"
                   alt="Marketing Director"
                   width={200}
                   height={200}
