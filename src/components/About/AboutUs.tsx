@@ -45,16 +45,16 @@ const AboutUs: React.FC = () => {
             <div className="w-full md:w-1/3 px-4 mb-8">
               <div className="text-center">
                 <Image
-                  src="/images/team/ceo.jpg"
+                  src="/images/about/manimaran.jpg"
                   alt="CEO"
                   width={200}
                   height={200}
                   className="rounded-full mx-auto mb-4"
                 />
-                <h3 className="text-xl font-semibold">Sutharson Mathialagan</h3>
+                 <h3 className="text-xl font-semibold">Manimaran Karumalai</h3>
                 <p className="text-body-color">Chief Executive Officer</p>
                 <p className="text-body-color mt-2">
-                  Sutharson brings extensive experience in business management and strategic planning, leading Inerpulse LLP towards innovation and growth.
+                  Manimaran is an experienced engineer who has dedicated nearly a decade to full-time volunteering in a non-profit organization. He brings clarity, simplicity, and efficiency to Inerpulse LLP.
                 </p>
               </div>
             </div>
@@ -62,16 +62,16 @@ const AboutUs: React.FC = () => {
             <div className="w-full md:w-1/3 px-4 mb-8">
               <div className="text-center">
                 <Image
-                  src="/images/team/cto.jpg"
+                  src="/images/about/Vijay.jpg"
                   alt="CTO"
                   width={200}
                   height={200}
                   className="rounded-full mx-auto mb-4"
                 />
-                <h3 className="text-xl font-semibold">Lokesh Kumar</h3>
+                <h3 className="text-xl font-semibold">Kandan Munusamy</h3>
                 <p className="text-body-color">Chief Technology Officer</p>
                 <p className="text-body-color mt-2">
-                  Lokesh oversees the technological direction of the company, ensuring the delivery of cutting-edge ERP solutions to our clients.
+                  Kandan has nearly a decade of experience in ERP systems, specializing in Odoo implementation. He leads our technological strategies to deliver cutting-edge solutions to our clients.
                 </p>
               </div>
             </div>
@@ -79,16 +79,16 @@ const AboutUs: React.FC = () => {
             <div className="w-full md:w-1/3 px-4 mb-8">
               <div className="text-center">
                 <Image
-                  src="/images/team/marketing-director.jpg"
+                  src="/images/about/Vijay.jpg"
                   alt="Marketing Director"
                   width={200}
                   height={200}
                   className="rounded-full mx-auto mb-4"
                 />
-                <h3 className="text-xl font-semibold">Kandan Munusamy</h3>
+                <h3 className="text-xl font-semibold">Vengatachalapathy Perisamy</h3>
                 <p className="text-body-color">Marketing Director</p>
                 <p className="text-body-color mt-2">
-                  Kandan leads our marketing strategies, focusing on building strong client relationships and expanding our market presence.
+                  Pathy leads our marketing strategies, focusing on building strong client relationships and expanding our market presence.
                 </p>
               </div>
             </div>
@@ -120,39 +120,44 @@ const AboutUs: React.FC = () => {
         <div className="mb-16">
           <SectionTitle
             title="Company Overview"
-            paragraph="Founded in 2022 and headquartered in Dharmapuri, Tamil Nadu, Inerpulse LLP specializes in delivering comprehensive Odoo ERP solutions tailored to diverse business needs. Our team of experts is dedicated to ensuring seamless ERP implementation, support, and training, empowering businesses to thrive in a competitive landscape."
+            paragraph="Founded in 2022 and headquartered in Coimbatore, Tamil Nadu, Inerpulse LLP specializes in delivering comprehensive Odoo ERP solutions tailored to diverse business needs. Our team of experts is dedicated to ensuring seamless ERP implementation, support, and training, empowering businesses to thrive in a competitive landscape."
             mb="44px"
           />
         </div>
 
         {/* Contact Information */}
         <div className="mb-16">
-          <SectionTitle
-            title="Contact Us"
-            paragraph="We are here to assist you. Reach out to us through any of the following methods."
-            mb="44px"
-          />
-          <div className="flex flex-col items-center space-y-8">
-            <div className="flex items-center space-x-4">
-              <FaEnvelope className="text-primary text-2xl" />
-              <a href="mailto:info@inerpulse.com" className="text-lg text-body-color">
-                info@inerpulse.com
-              </a>
-            </div>
-            <div className="flex items-center space-x-4">
-              <FaPhone className="text-primary text-2xl" />
-              <a href="tel:+917418303615" className="text-lg text-body-color">
-                +91 74183 03615
-              </a>
-            </div>
-            <div className="flex items-center space-x-4">
-              <FaMapMarkerAlt className="text-primary text-2xl" />
-              <address className="not-italic text-lg text-body-color">
-                99/1A, Perumal Kovil Pathy, Alandurai<br />
-                Coimbatore, 641101
-              </address>
-            </div>
+       <section id="contact" className="py-16 md:py-20 lg:py-28">
+      <div className="container mx-auto">
+        <div className="text-center mb-12">
+          <h1 className="text-3xl font-bold mb-6">Contact Us</h1>
+          <p className="text-lg text-body-color">
+            We are here to assist you. Reach out to us through any of the following methods.
+          </p>
+        </div>
+        <div className="max-w-md mx-auto bg-white p-8 rounded shadow-lg">
+          <div className="flex items-center mb-6">
+            <FaEnvelope className="text-primary text-2xl mr-4" />
+            <a href="mailto:info@inerpulse.com" className="text-lg text-body-color">
+              info@inerpulse.com
+            </a>
           </div>
+          <div className="flex items-center mb-6">
+            <FaPhone className="text-primary text-2xl mr-4" />
+            <a href="tel:+917418303615" className="text-lg text-body-color">
+              +91 74183 03615
+            </a>
+          </div>
+          <div className="flex items-start">
+            <FaMapMarkerAlt className="text-primary text-2xl mr-4 mt-1" />
+            <address className="not-italic text-lg text-body-color">
+              99/1A, Perumal Kovil Pathy, Alandurai<br />
+              Coimbatore, 641101
+            </address>
+          </div>
+        </div>
+      </div>
+    </section>
         </div>
       </div>
     </section>
