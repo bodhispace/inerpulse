@@ -1,5 +1,4 @@
-import AboutSectionOne from "@/components/About/AboutSectionOne";
-import AboutSectionTwo from "@/components/About/AboutSectionTwo";
+import AboutUs from "@/components/About/AboutUs";
 import Breadcrumb from "@/components/Common/Breadcrumb";
 
 import { Metadata } from "next";
@@ -19,12 +18,9 @@ const AboutPage = () => {
 
   return (
     <>
-      <Breadcrumb
-        pageName="About Page"
-        description={<span dangerouslySetInnerHTML={{ __html: description }} />}
-      />
-      <AboutSectionOne />
-      <AboutSectionTwo />
+     <br/><br/><br/>
+    <AboutUs/>
+
     </>
   );
 };
