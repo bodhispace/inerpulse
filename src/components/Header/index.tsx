@@ -64,14 +64,14 @@ const Header = () => {
                 onClick={closeMenu} // Close menu on logo click
               >
                 <Image
-                  src="/images/logo/logo.jpeg"
+                  src="/images/logo/logop.png"
                   alt="logo"
                   width={140}
                   height={30}
                   className="w-full dark:hidden"
                 />
                 <Image
-                  src="/images/logo/logo.jpeg"
+                  src="/images/logo/logop.png"
                   alt="logo"
                   width={140}
                   height={30}
