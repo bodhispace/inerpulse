@@ -24,42 +24,50 @@ const Contact: React.FC = () => {
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
-  e.preventDefault();
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitError(null);
+    setSubmitSuccess(null);
 
-  try {
-    const response = await fetch("/api/contact", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(formData),
-    });
+    try {
+      const response = await fetch(
+        "/api/contact",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        }
+      );
 
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      const result = await response.json();
+
+      if (result.result === "success") {
+        setSubmitSuccess("Form submitted successfully!");
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          city: "",
+          companyName: "",
+          companyWebsite: "",
+          message: "",
+        });
+      } else {
+        setSubmitError("Something went wrong. Please try again.");
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      setSubmitError("Failed to submit. Please try again later.");
+    } finally {
+      setIsSubmitting(false);
     }
-
-    const result = await response.json();
-
-    if (result.result === "success") {
-      alert("Form submitted successfully!");
-      setFormData({
-        name: "",
-        email: "",
-        phone: "",
-        city: "",
-        companyName: "",
-        companyWebsite: "",
-        message: "",
-      });
-    } else {
-      alert("Something went wrong. Please try again.");
-    }
-  } catch (error) {
-    console.error("Error submitting form:", error);
-    alert("Failed to submit. Please try again later.");
-  }
-};
+  };
 
   return (
     <section id="contact" className="py-16 md:py-20 lg:py-28">
@@ -141,15 +149,14 @@ const Contact: React.FC = () => {
 
               {/* Company Website */}
               <div className="p-4 border rounded shadow-sm">
-                <label className="block text-gray-700 mb-2">Company Website URL *</label>
+                <label className="block text-gray-700 mb-2">Company Website URL</label>
                 <input
                   type="url"
                   name="companyWebsite"
                   value={formData.companyWebsite}
                   onChange={handleChange}
-                  placeholder="Enter your company website"
+                  placeholder="Enter your company website (if applicable)"
                   className="w-full px-3 py-2 border rounded"
-                  required
                 />
               </div>
             </div>
