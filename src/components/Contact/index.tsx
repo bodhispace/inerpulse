@@ -21,13 +21,25 @@ const Contact: React.FC = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
     try {
-      const response = await fetch("https://script.google.com/macros/s/AKfycbxqTKjO9-qmth3BZmd2XeXdFv0RSBcbjfZ2q9i-33IyU5jqecGkghMdb3qAwP8qlIHC/exec", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      });
+      const response = await fetch(
+        "https://script.google.com/macros/s/AKfycbxF8XffPhL9o4ylIfwwxJuXy_9YI8ij2cnGX6eGjoeQgHAVnd5e3qPVdTIC9T_ah8C-/exec",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        }
+      );
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
       const result = await response.json();
+
       if (result.result === "success") {
         alert("Form submitted successfully!");
       } else {
@@ -43,77 +55,92 @@ const Contact: React.FC = () => {
     <section id="contact" className="py-16 md:py-20 lg:py-28">
       <div className="container mx-auto">
         {/* Contact Form */}
-        <div className="max-w-md mx-auto bg-white p-8 rounded shadow-lg mb-12">
-          <h2 className="text-2xl font-bold mb-4">Enquire Now</h2>
+        <div className="max-w-4xl mx-auto bg-white p-8 rounded shadow-lg mb-12">
+          <h2 className="text-2xl font-bold mb-6 text-center">Enquire Now</h2>
           <form onSubmit={handleSubmit}>
-            <div className="mb-4">
-              <label className="block text-gray-700">Name *</label>
-              <input
-                type="text"
-                name="name"
-                value={formData.name}
-                onChange={handleChange}
-                className="w-full px-3 py-2 border rounded"
-                required
-              />
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {/* Name */}
+              <div className="p-4 border rounded shadow-sm">
+                <label className="block text-gray-700 mb-2">Name *</label>
+                <input
+                  type="text"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  className="w-full px-3 py-2 border rounded"
+                  required
+                />
+              </div>
+
+              {/* Email */}
+              <div className="p-4 border rounded shadow-sm">
+                <label className="block text-gray-700 mb-2">Business Email *</label>
+                <input
+                  type="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  className="w-full px-3 py-2 border rounded"
+                  required
+                />
+              </div>
+
+              {/* Phone */}
+              <div className="p-4 border rounded shadow-sm">
+                <label className="block text-gray-700 mb-2">Business Phone Number *</label>
+                <input
+                  type="tel"
+                  name="phone"
+                  value={formData.phone}
+                  onChange={handleChange}
+                  className="w-full px-3 py-2 border rounded"
+                  required
+                />
+              </div>
+
+              {/* City */}
+              <div className="p-4 border rounded shadow-sm">
+                <label className="block text-gray-700 mb-2">Your City *</label>
+                <input
+                  type="text"
+                  name="city"
+                  value={formData.city}
+                  onChange={handleChange}
+                  className="w-full px-3 py-2 border rounded"
+                  required
+                />
+              </div>
+
+              {/* Company Name */}
+              <div className="p-4 border rounded shadow-sm">
+                <label className="block text-gray-700 mb-2">Company Name *</label>
+                <input
+                  type="text"
+                  name="companyName"
+                  value={formData.companyName}
+                  onChange={handleChange}
+                  className="w-full px-3 py-2 border rounded"
+                  required
+                />
+              </div>
+
+              {/* Company Website */}
+              <div className="p-4 border rounded shadow-sm">
+                <label className="block text-gray-700 mb-2">Company Website URL *</label>
+                <input
+                  type="url"
+                  name="companyWebsite"
+                  value={formData.companyWebsite}
+                  onChange={handleChange}
+                  className="w-full px-3 py-2 border rounded"
+                  required
+                />
+              </div>
             </div>
-            <div className="mb-4">
-              <label className="block text-gray-700">Business Email *</label>
-              <input
-                type="email"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                className="w-full px-3 py-2 border rounded"
-                required
-              />
-            </div>
-            <div className="mb-4">
-              <label className="block text-gray-700">Business Phone Number *</label>
-              <input
-                type="tel"
-                name="phone"
-                value={formData.phone}
-                onChange={handleChange}
-                className="w-full px-3 py-2 border rounded"
-                required
-              />
-            </div>
-            <div className="mb-4">
-              <label className="block text-gray-700">Your City *</label>
-              <input
-                type="text"
-                name="city"
-                value={formData.city}
-                onChange={handleChange}
-                className="w-full px-3 py-2 border rounded"
-                required
-              />
-            </div>
-            <div className="mb-4">
-              <label className="block text-gray-700">Company Name *</label>
-              <input
-                type="text"
-                name="companyName"
-                value={formData.companyName}
-                onChange={handleChange}
-                className="w-full px-3 py-2 border rounded"
-                required
-              />
-            </div>
-            <div className="mb-4">
-              <label className="block text-gray-700">Company Website URL *</label>
-              <input
-                type="url"
-                name="companyWebsite"
-                value={formData.companyWebsite}
-                onChange={handleChange}
-                className="w-full px-3 py-2 border rounded"
-                required
-              />
-            </div>
-            <div className="mb-4">
-              <label className="block text-gray-700">Message</label>
+
+            {/* Message */}
+            <div className="p-4 border rounded shadow-sm mt-6">
+              <label className="block text-gray-700 mb-2">Message</label>
               <textarea
                 name="message"
                 value={formData.message}
@@ -121,9 +148,12 @@ const Contact: React.FC = () => {
                 className="w-full px-3 py-2 border rounded"
               />
             </div>
-            <button type="submit" className="w-full bg-blue-500 text-white py-2 rounded">
-              Enquire Now
-            </button>
+
+            <div className="mt-6 text-center">
+              <button type="submit" className="w-full bg-blue-500 text-white py-2 rounded">
+                Enquire Now
+              </button>
+            </div>
           </form>
         </div>
 
