@@ -14,42 +14,52 @@ const Contact: React.FC = () => {
     message: "",
   });
 
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
+  const [submitSuccess, setSubmitSuccess] = useState<string | null>(null);
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData((prevData) => ({ ...prevData, [name]: value }));
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
+  e.preventDefault();
 
-    try {
-      const response = await fetch(
-        "https://script.google.com/macros/s/AKfycbxF8XffPhL9o4ylIfwwxJuXy_9YI8ij2cnGX6eGjoeQgHAVnd5e3qPVdTIC9T_ah8C-/exec",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(formData),
-        }
-      );
+  try {
+    const response = await fetch("/api/contact", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    });
 
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
-
-      const result = await response.json();
-
-      if (result.result === "success") {
-        alert("Form submitted successfully!");
-      } else {
-        alert("Something went wrong. Please try again.");
-      }
-    } catch (error) {
-      console.error("Error submitting form:", error);
-      alert("Failed to submit. Please try again later.");
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
     }
-  };
+
+    const result = await response.json();
+
+    if (result.result === "success") {
+      alert("Form submitted successfully!");
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        city: "",
+        companyName: "",
+        companyWebsite: "",
+        message: "",
+      });
+    } else {
+      alert("Something went wrong. Please try again.");
+    }
+  } catch (error) {
+    console.error("Error submitting form:", error);
+    alert("Failed to submit. Please try again later.");
+  }
+};
 
   return (
     <section id="contact" className="py-16 md:py-20 lg:py-28">
@@ -67,6 +77,7 @@ const Contact: React.FC = () => {
                   name="name"
                   value={formData.name}
                   onChange={handleChange}
+                  placeholder="Enter your full name"
                   className="w-full px-3 py-2 border rounded"
                   required
                 />
@@ -80,6 +91,7 @@ const Contact: React.FC = () => {
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
+                  placeholder="Enter your email address"
                   className="w-full px-3 py-2 border rounded"
                   required
                 />
@@ -93,6 +105,7 @@ const Contact: React.FC = () => {
                   name="phone"
                   value={formData.phone}
                   onChange={handleChange}
+                  placeholder="Enter your phone number"
                   className="w-full px-3 py-2 border rounded"
                   required
                 />
@@ -106,6 +119,7 @@ const Contact: React.FC = () => {
                   name="city"
                   value={formData.city}
                   onChange={handleChange}
+                  placeholder="Enter your city"
                   className="w-full px-3 py-2 border rounded"
                   required
                 />
@@ -119,6 +133,7 @@ const Contact: React.FC = () => {
                   name="companyName"
                   value={formData.companyName}
                   onChange={handleChange}
+                  placeholder="Enter your company name"
                   className="w-full px-3 py-2 border rounded"
                   required
                 />
@@ -132,6 +147,7 @@ const Contact: React.FC = () => {
                   name="companyWebsite"
                   value={formData.companyWebsite}
                   onChange={handleChange}
+                  placeholder="Enter your company website"
                   className="w-full px-3 py-2 border rounded"
                   required
                 />
@@ -145,13 +161,24 @@ const Contact: React.FC = () => {
                 name="message"
                 value={formData.message}
                 onChange={handleChange}
+                placeholder="Enter your message (optional)"
                 className="w-full px-3 py-2 border rounded"
               />
             </div>
 
+            {/* Submission Feedback */}
+            {submitError && <p className="text-red-500 text-center mt-4">{submitError}</p>}
+            {submitSuccess && <p className="text-green-500 text-center mt-4">{submitSuccess}</p>}
+
             <div className="mt-6 text-center">
-              <button type="submit" className="w-full bg-blue-500 text-white py-2 rounded">
-                Enquire Now
+              <button
+                type="submit"
+                className={`w-full bg-blue-500 text-white py-2 rounded ${
+                  isSubmitting ? "opacity-50 cursor-not-allowed" : ""
+                }`}
+                disabled={isSubmitting}
+              >
+                {isSubmitting ? "Submitting..." : "Enquire Now"}
               </button>
             </div>
           </form>
