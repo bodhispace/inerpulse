@@ -151,7 +151,7 @@ const Contact: React.FC = () => {
               <div className="p-4 border rounded shadow-sm">
                 <label className="block text-gray-700 mb-2">Company Website URL</label>
                 <input
-                  type="url"
+                  type="text"
                   name="companyWebsite"
                   value={formData.companyWebsite}
                   onChange={handleChange}
